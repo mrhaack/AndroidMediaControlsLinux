@@ -1,7 +1,7 @@
-import win32api
-import win32con
+from pynput.keyboard import KeyCode, Controller
 
-VK_MEDIA_PLAY_PAUSE = 0xB3
+keyboard = Controller()
 
 def toggle_play():
-    win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, 0, 0)
+    keyboard.press(KeyCode.from_vk(0x1008FF14))
+    keyboard.release(KeyCode.from_vk(0x1008FF14))
